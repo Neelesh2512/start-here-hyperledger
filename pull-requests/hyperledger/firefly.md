@@ -14,6 +14,39 @@ permalink: /pull-requests/hyperledger/firefly
     <table>
         <tr>
             <td>
+                PR <a href="https://github.com/hyperledger/firefly/pull/722" class=".btn">#722</a>
+            </td>
+            <td>
+                <b>
+                    Honor "confirm" parameter for blockchain invoke
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                In a PR chain with #720.
+
+Unit tests are not yet complete, but wanted to validate the approach before finishing them.
+
+Summary of the changes:
+* The `confirm` parameter for `/invoke` will now be honored (previously it was ignored)
+* The `fftypes.ContractCallResponse` type is removed, and `/invoke` requests now just return `fftypes.Operation`
+* Two new event types are added - `EventTypeBlockchainInvokeOpSucceeded` and `EventTypeBlockchainInvokeOpFailed` - which reference an operation ID (open to thoughts on whether `topic` and `correlator` should be filled in)
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-15 18:37:35 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
                 PR <a href="https://github.com/hyperledger/firefly/pull/721" class=".btn">#721</a>
             </td>
             <td>
@@ -802,110 +835,6 @@ Technically there's no reason to drop the lookup by event ID, so if there is a s
     </table>
     <div class="right-align">
         Created At 2022-04-10 12:16:48 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/683" class=".btn">#683</a>
-            </td>
-            <td>
-                <b>
-                    Remove extra postgres migrations
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                It looks like at some point we removed sqlite migrations 20 and 21, but did not remove the corresponding postgres migrations. This was causing FireFly to fail to start when attempting to apply postgres migrations. This PR aligns the postgres migrations with the working sqlite migrations.
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-09 12:33:49 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/682" class=".btn">#682</a>
-            </td>
-            <td>
-                <b>
-                    Fix make docker command in release build GitHub Action
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Signed-off-by: Nicko Guyer <nicko.guyer@kaleido.io>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-09 02:10:36 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/681" class=".btn">#681</a>
-            </td>
-            <td>
-                <b>
-                    Enforce config descriptions
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Signed-off-by: Nicko Guyer <nicko.guyer@kaleido.io>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-08 20:55:10 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/680" class=".btn">#680</a>
-            </td>
-            <td>
-                <b>
-                    Add /api/v1/status/websockets
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Fixes #679
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-08 19:57:14 +0000 UTC
     </div>
 </div>
 
