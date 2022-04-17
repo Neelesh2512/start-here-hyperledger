@@ -22,7 +22,7 @@ This is a perfect place for you to see the list of available issues which
 require help. Browse through them and get involved with
 [Hyperledger](https://www.hyperledger.org).
 
-# Contributors Neelesh
+# Contributors
 
 Hyperledger has the most amazing open-source community. This site is made
 possible by generous contributions of
