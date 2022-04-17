@@ -14,6 +14,210 @@ permalink: /pull-requests/hyperledger-labs/solang
     <table>
         <tr>
             <td>
+                PR <a href="https://github.com/hyperledger-labs/solang/pull/748" class=".btn">#748</a>
+            </td>
+            <td>
+                <b>
+                    Implement type definition syntax
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                TODO:
+ - Documentation
+
+Signed-off-by: Sean Young <sean@mess.org>
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-17 09:26:17 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger-labs/solang/pull/747" class=".btn">#747</a>
+            </td>
+            <td>
+                <b>
+                    feat(parser): user defined value types
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                Resolves https://github.com/hyperledger-labs/solang/issues/746
+
+Better suggestions on resolving ambiguity with `type()` builtin are welcome 😄 
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-15 21:58:29 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger-labs/solang/pull/745" class=".btn">#745</a>
+            </td>
+            <td>
+                <b>
+                    Fix lexing of /**/
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                This type of comment was not recognised by the lexer.
+
+Fixes #744.
+
+Signed-off-by: Sean Young <sean@mess.org>
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-15 09:09:08 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger-labs/solang/pull/743" class=".btn">#743</a>
+            </td>
+            <td>
+                <b>
+                    feat: support projections in revert statement
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                I tried to fix this but I believe Hit some lalrpop issues, so this won't build I'm afraid. 
+But not sure what the proper fix for this would be, so I'd need some help
+
+
+Background
+
+this is a valid revert:
+
+```solidity
+        function doRevert2() internal pure {
+             revert LibName.ErrorName();
+        }
+```
+
+if an error is defined inside a library `LibName` 
+
+the solidity grammar states the revert stmt is `"revert" + expr + call-arg-list`
+But I think only this is valid (Id)? ("." Id)*
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-13 17:54:46 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger-labs/solang/pull/742" class=".btn">#742</a>
+            </td>
+            <td>
+                <b>
+                    feat: support byte as yulidentifier
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                prior to this `byte` was tokenized as `Token::Bytes(1)` as prior to 0.8.0 `byte` used to be an alias for `bytes1`
+
+however this breaks the assembly `byte` function
+
+```solidity
+            assembly {
+                v := byte(0, mload(add(signature, 0x60)))
+            }
+```
+
+This PR
+
+* adds a `"bytes" => Byte` token, that will be `Bytes(1)` if used as type or a yulidentifier
+
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-13 16:58:41 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger-labs/solang/pull/741" class=".btn">#741</a>
+            </td>
+            <td>
+                <b>
+                    Create codegen::Expression and refactor codegen
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                This PR refactor code generation. The main addition was the `codegen::Expression`. This means we no longer depend on `ast::Expression` to build the CFG. I've managed to improve some other stuff:
+
+1. Now, we have a `cast` function for codegen. 
+2. Sema's `cast` function is now a method of `ast::Expression`.
+3. I created traits for common functions to facilitate implementing methods with generic arguments.
+4. I removed from the AST expressions that do not belong there, except `FunctionArg`, to which I couldn't find an easy solution.
+5. Some AST expressions do not exist is the CFG, so I removed references to them in codegen.
+6. As we are branching at every AND and OR expression, they do not exist in `codegen::Expression`. However, I left some block comments containing the code to handle those cases, in case we add them in nearby future.
+
+PS: This PR modifies 56 files, so please, @seanyoung, be pedantic!
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-13 14:53:55 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
                 PR <a href="https://github.com/hyperledger-labs/solang/pull/740" class=".btn">#740</a>
             </td>
             <td>
@@ -90,7 +294,7 @@ Signed-off-by: Sean Young <sean@mess.org>
             <td>
                 When the left hand side of a destructure statements is a structure member or array element, the test incorrectly assumed the value was not assignable.
     
-Fixes issue #734.
+Fixes issue #731.
     
 
             </td>
@@ -206,34 +410,6 @@ Signed-off-by: Sean Young <sean@mess.org>
     </table>
     <div class="right-align">
         Created At 2022-04-12 14:16:58 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger-labs/solang/pull/730" class=".btn">#730</a>
-            </td>
-            <td>
-                <b>
-                    struct member expressions are not written to graphviz dot file
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                The handling was incorrect and no nodes were generated.
-
-Signed-off-by: Sean Young <sean@mess.org>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-09 13:18:08 +0000 UTC
     </div>
 </div>
 

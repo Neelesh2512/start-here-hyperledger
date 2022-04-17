@@ -14,6 +14,32 @@ permalink: /pull-requests/hyperledger/aries-acapy-plugin-toolbox
     <table>
         <tr>
             <td>
+                PR <a href="https://github.com/hyperledger/aries-acapy-plugin-toolbox/pull/130" class=".btn">#130</a>
+            </td>
+            <td>
+                <b>
+                    Test/int/connection reuse
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                This PR adds integration tests for the connection reuse feature with both a single out-of-band public invitation and multiple out-of-band public invitations using the field `use_existing_connection`. 
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-15 01:55:32 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
                 PR <a href="https://github.com/hyperledger/aries-acapy-plugin-toolbox/pull/129" class=".btn">#129</a>
             </td>
             <td>
@@ -33,33 +59,6 @@ permalink: /pull-requests/hyperledger/aries-acapy-plugin-toolbox
     </table>
     <div class="right-align">
         Created At 2022-04-11 23:36:59 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/aries-acapy-plugin-toolbox/pull/128" class=".btn">#128</a>
-            </td>
-            <td>
-                <b>
-                    feat: replace connections with oob for invites in all demo configs
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                I may have been a smidge trigger-happy, but I replaced every instance of `connections-invite` with just `invite` in the demo configs so that they would use OOB invitations rather than Connections invitations.
-Signed-off-by: Micah Peltier <micah6_8@yahoo.com>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-08 17:24:46 +0000 UTC
     </div>
 </div>
 

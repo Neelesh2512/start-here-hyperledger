@@ -14,6 +14,230 @@ permalink: /pull-requests/hyperledger/firefly
     <table>
         <tr>
             <td>
+                PR <a href="https://github.com/hyperledger/firefly/pull/722" class=".btn">#722</a>
+            </td>
+            <td>
+                <b>
+                    Honor "confirm" parameter for blockchain invoke
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                In a PR chain with #720.
+
+Unit tests are not yet complete, but wanted to validate the approach before finishing them.
+
+Summary of the changes:
+* The `confirm` parameter for `/invoke` will now be honored (previously it was ignored)
+* The `fftypes.ContractCallResponse` type is removed, and `/invoke` requests now just return `fftypes.Operation`
+* Two new event types are added - `EventTypeBlockchainInvokeOpSucceeded` and `EventTypeBlockchainInvokeOpFailed` - which reference an operation ID (open to thoughts on whether `topic` and `correlator` should be filled in)
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-15 18:37:35 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/firefly/pull/721" class=".btn">#721</a>
+            </td>
+            <td>
+                <b>
+                    New Getting Started Guide
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                - All of the content under "Getting Started" is completely new.
+- This is now completely tailored for someone who is completely new to FireFly and needs a walkthrough on how to get started with it
+- Existing "Getting Started Guides" have moved to a new "Tutorials" section
+
+A live preview of these new docs can be viewed at: https://nguyer.github.io/firefly/gettingstarted/gettingstarted.html
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-15 18:15:39 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/firefly/pull/720" class=".btn">#720</a>
+            </td>
+            <td>
+                <b>
+                    Move "special" operation update handling out of Operations Manager
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                Feels like these should be farmed out instead of Operations Manager having knowledge of the various specific operation types.
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-15 17:26:33 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/firefly/pull/719" class=".btn">#719</a>
+            </td>
+            <td>
+                <b>
+                    OpenAPI cleanup items
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                <nil>
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-15 17:17:50 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/firefly/pull/717" class=".btn">#717</a>
+            </td>
+            <td>
+                <b>
+                    Rename contract listener "protocol_id" to "backend_id"
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                This doesn't align with other "protocol_id" fields in the system, so it should have a different name.
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-14 20:19:14 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/firefly/pull/716" class=".btn">#716</a>
+            </td>
+            <td>
+                <b>
+                    DID rewind
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                Fixes #692 
+In PR chain with #707
+
+This PR adds a new reason for a rewind - to go back and confirm messages that were previously parked because the author was not known.
+
+We cannot assure that the identity verification for an identity, will be processed by the aggregator before messages sent by that identity, or child identities registered under that identity. Because they are all sent on different topics.
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-13 19:00:26 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/firefly/pull/714" class=".btn">#714</a>
+            </td>
+            <td>
+                <b>
+                    WebSocket disconnections should be info messages
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                <nil>
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-13 16:04:27 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/firefly/pull/712" class=".btn">#712</a>
+            </td>
+            <td>
+                <b>
+                    Restore getting started section
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                This was an accidental deletion in #708 
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-13 13:27:57 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
                 PR <a href="https://github.com/hyperledger/firefly/pull/711" class=".btn">#711</a>
             </td>
             <td>
@@ -46,16 +270,28 @@ Looks like it's due to a clash in the names between the token tests
             </td>
             <td>
                 <b>
-                    Rename transfer/approval "id" to "subject"
+                    Fix token approvals and clarify fields "protocolId", "locator", and "subject"
                 </b>
             </td>
         </tr>
         <tr>
             <td>
-                
+                <span class="chip">migration_consideration</span>
             </td>
             <td>
                 Depends on https://github.com/hyperledger/firefly-tokens-erc1155/pull/67 and https://github.com/hyperledger/firefly-tokens-erc20-erc721/pull/42
+
+This started as a quest to clean up token approvals, but ended up encompassing a few related items:
+
+* The term "protocolId" has come to mean (fairly specifically) "an ID meaningful in the context of an underlying blockchain protocol".
+  * The existing "protocolId" of token approvals is renamed to "subject", and token approvals get a new "protocolId" field that better aligns with the above.
+  * Token transfers keep their "protocolId" unchanged, as it already aligns.
+  * The existing "protocolId" of token pools is renamed to "locator".
+  * Blockchain events will be de-duplicated based on their "protocolId" - only one event per namespace+listener+protocolId will be recorded, to avoid recording the same blockchain event multiple times.
+* Token approvals will record _all_ historical approvals (instead of sometimes overwriting old ones). As a convenience for query purposes, the most recent approval for each subject will be notated with a new field "active=true".
+* When matching token approval (and transfer) events to operations, event manager will now consider the operation ID _and_ the token connector and pool embedded in the operation inputs before considering it a match. This ensures that side-effects in other pools will not be matched with the wrong operation and return unexpected results for synchronous actions (when using confirm=true). Resolves #661.
+
+This does introduce changes in the interface with token connectors, so will require connectors to be upgraded alongside it.
             </td>
         </tr>
     </table>
@@ -562,516 +798,6 @@ methods and events.
     </table>
     <div class="right-align">
         Created At 2022-04-10 16:53:28 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/685" class=".btn">#685</a>
-            </td>
-            <td>
-                <b>
-                    Add contract listeners only by event definition or event pathname
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span class="chip">migration_consideration</span>
-            </td>
-            <td>
-                Previously, contract listeners could be added in 3 ways:
-1. By passing a full event definition inline
-2. By passing a partial event definition (containing just an event name) along with an interface reference
-3. By passing an event ID
-
-Number (2) is slightly confusing in how it is expressed and differentiated from (1), and also has been slightly broken since we don't actually support event lookup by "name" (rather it's by "pathname", and "pathname" isn't a field available on the FFIEventDefinition type).
-
-To clean all this up, I'm proposing here that we drop the existing (2) and (3) and instead end up with only these two ways to add a listener:
-1. By passing a full event definition inline
-2. By passing an interface reference and event pathname
-
-Technically there's no reason to drop the lookup by event ID, so if there is a strong argument to keep it, we can. But I like the simplicity of these two codepaths that I anticipate will be the most common.
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-10 12:16:48 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/683" class=".btn">#683</a>
-            </td>
-            <td>
-                <b>
-                    Remove extra postgres migrations
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                It looks like at some point we removed sqlite migrations 20 and 21, but did not remove the corresponding postgres migrations. This was causing FireFly to fail to start when attempting to apply postgres migrations. This PR aligns the postgres migrations with the working sqlite migrations.
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-09 12:33:49 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/682" class=".btn">#682</a>
-            </td>
-            <td>
-                <b>
-                    Fix make docker command in release build GitHub Action
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Signed-off-by: Nicko Guyer <nicko.guyer@kaleido.io>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-09 02:10:36 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/681" class=".btn">#681</a>
-            </td>
-            <td>
-                <b>
-                    Enforce config descriptions
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Signed-off-by: Nicko Guyer <nicko.guyer@kaleido.io>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-08 20:55:10 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/680" class=".btn">#680</a>
-            </td>
-            <td>
-                <b>
-                    Add /api/v1/status/websockets
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Fixes #679
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-08 19:57:14 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/678" class=".btn">#678</a>
-            </td>
-            <td>
-                <b>
-                    Configuration docs, and packaging config/i18n for re-use by microservices
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                A bunch of changes to improve our config docs (thanks @nguyer for your work there), and some structural changes to the `config` and `i18n` packages to allow them to be used by other microservices building in Go within the FireFly project.
-
-- `pkg/config` - moved out the package for configuration, including the facility for Markdown generation
-  - Split out the configuration that is base (just `log` and `lang`) from the Core configuration
-  - `internal/coreconfig` contains the core configuration
-  - Note that `coreconfig.Reset()` initializes all the defaults in a lock (needed to avoid concurrent map errors)
-- `pkg/i18n` - moved out the translation framework
-  - All the framework for translation moved
-  - Tweak to how the default `en` translations are initialized, to allow sub-modules to keep adding keys
-  - Split out `ErrorMessageKey` from `MessageKey` - with the distinction that errors have to have a registered prefix, that means microservices will not re-use message codes from other microservices
-  - `FF10` errors are the FireFly Core errors
-  - `FF00` errors are raised from the common utilities in `pkg` - note this mean renames of some codes
-  - `FF201` errors are for the new Transaction Manager microservice being split out of EthConnect (the reason for doing this work now)
-
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-08 18:10:46 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/677" class=".btn">#677</a>
-            </td>
-            <td>
-                <b>
-                    Update manifest for v1.0.0-rc.1
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Signed-off-by: Nicko Guyer <nicko.guyer@kaleido.io>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-08 17:52:03 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/676" class=".btn">#676</a>
-            </td>
-            <td>
-                <b>
-                    [ui-v0.6.10] manifest
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Signed-off-by: David Echelberger <eberger727@gmail.com>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-08 17:29:57 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/674" class=".btn">#674</a>
-            </td>
-            <td>
-                <b>
-                    Check up-front for duplicate token pool name
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                <nil>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-07 18:57:21 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/673" class=".btn">#673</a>
-            </td>
-            <td>
-                <b>
-                    Clean up blockchain parameters returned by token connectors
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Requires matching changes in all token connectors as well.
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-07 17:48:58 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/671" class=".btn">#671</a>
-            </td>
-            <td>
-                <b>
-                    Remove references to old firefly-e2e stack name
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                <nil>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-07 16:08:47 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/670" class=".btn">#670</a>
-            </td>
-            <td>
-                <b>
-                    Do not update cache until messages/data assured to be in DB
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                I was diagnosing a message stuck in `Pending` state on the latest mainline code, even though the logs and state all showed it had been confirmed. It was an identity claim broadcast.
-
-I found this log entry, which was from the batch persist logic running _concurrently_ with the aggregator:
-
-```
-[2022-04-07T02:34:35.666Z] DEBUG ...firefly: Batch data insert optimization failed for batch '21319666-b115-491c-af29-48da417904db': FF10116: Database insert failed: FF10375: Failed to retrieve sequence for insert row 1 (could mean duplicate insert) dbtx=3pRrPKf3 role=event-manager
-```
-
-I believe the problem is we're updating the cache before the DB commit at the moment when persisting the batch, so what was happening was the aggregator was confirming it with an `UPDATE messages SET ...` statement, but that was happening _before_ the messages were being upserted.
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-07 04:39:24 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/669" class=".btn">#669</a>
-            </td>
-            <td>
-                <b>
-                    [charts-isCapped] adding isCapped key to charts response
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                New Response:
-```json
-[
-    {
-        "count": "0",
-        "isCapped": false,
-        "timestamp": "2022-04-06T23:21:00Z",
-        "types": []
-    },
-    {
-        "count": "100",
-        "isCapped": true,
-        "timestamp": "2022-04-07T00:57:00Z",
-        "types": [
-            {
-                "count": "1",
-                "type": "token_pool_confirmed"
-            },
-            {
-                "count": "37",
-                "type": "message_confirmed"
-            },
-            {
-                "count": "12",
-                "type": "token_transfer_confirmed"
-            },
-            {
-                "count": "25",
-                "type": "transaction_submitted"
-            },
-            {
-                "count": "25",
-                "type": "blockchain_event_received"
-            }
-        ]
-    }
-]
-```
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-07 02:33:40 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/668" class=".btn">#668</a>
-            </td>
-            <td>
-                <b>
-                    New operations admin APIs and revamped change-event listener on admin WebSocket
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                The policy engine described in https://github.com/hyperledger/firefly-ethconnect/issues/149#issuecomment-920866244 is starting to come together, with some evolved architecture.
-
-The intention is for this to be a separate microservice, so it can be pluggable with different implementations easily, have a separate scaling model, and be closer to EthConnect in where it sits in the architecture than to the core.
-
-However, the source of truth for the completion of operations is still FireFly. So this is more like an augmented _component_ of FireFly, than it is a plugin/connector that performs a particular task on behalf of FireFly. So as such I believe it should connect _in_ to FireFly to perform actions.
-
-Currently (before this PR) we have some of things it would need - with gaps:
-- Operations API - query only, and limited to one namespace.
-- Operation change events - oddly side-car attached to the main application events, without sophisticated filtering
-
-So this PR proposes we create a proper separation of concerns between the components that have super-access to update FireFly state, because they are part of it (the `admin` API already exists for this), and the external API that applications use.
-
-- Adding `GET` `/admin/api/v1/operations` routes - including a `PUT` to update operation status (per same rules that apply to internal plugins like Data Exchange today)
-- **Moving** the database change events firehose WebSocket to `/admin/ws` with extra options, and a simplified no-confirm model. It's best effort up to a buffer size, and then operation of the core is prioritized over avoiding any event loss, and always ephemeral. No guarantees.
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-07 00:15:16 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/667" class=".btn">#667</a>
-            </td>
-            <td>
-                <b>
-                    Latest UI v0.6.9
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Thanks @eberger727 !
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-06 22:12:25 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/firefly/pull/666" class=".btn">#666</a>
-            </td>
-            <td>
-                <b>
-                    Remove misleading payload_ref DB field and fix Group JSON tag
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                In diagnosing a recent issue, I noticed that the `payloadRef` of a batch is a Database stored field, but is never set when you query in the database.
-
-This is because we were writing it when we sealed the batch for delivery, but then overwriting it when we confirmed the batch.
-
-It also had `VARCHAR(64)` in PSQL and `VARCHAR(256)` in SQLite.
-
-The code actually only _needed_ it to pass the `payloadRef` from the batch upload operation, to the batch pin operation. Instead of relying on that, I've added it explicitly to the inputs of the Batch Pin operation - which overall feels much more consistent.
-
-Then I've removed the DB field (for newly created envs - it nullable so no need for a migration to remove it).
-
-I had to update the operations interface to return the outputs though, as it wasn't currently.
-
-Unrelated fix - the `json:` tag on `Group` was wrong on `BatchPersisted` so we were returning `Group` rather than `group` on the JSON.
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-06 17:50:29 +0000 UTC
     </div>
 </div>
 

@@ -14,6 +14,33 @@ permalink: /pull-requests/hyperledger/aries-framework-go
     <table>
         <tr>
             <td>
+                PR <a href="https://github.com/hyperledger/aries-framework-go/pull/3220" class=".btn">#3220</a>
+            </td>
+            <td>
+                <b>
+                    docs: [readme-text] replace digital-hub with encrypted-data-vault
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                Signed-off-by: Rolson Quadras <rolson.quadras@securekey.com>
+
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-13 17:04:06 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
                 PR <a href="https://github.com/hyperledger/aries-framework-go/pull/3218" class=".btn">#3218</a>
             </td>
             <td>
@@ -178,35 +205,6 @@ Signed-off-by: Derek Trider <Derek.Trider@securekey.com>
     </table>
     <div class="right-align">
         Created At 2022-04-11 17:28:39 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/aries-framework-go/pull/3215" class=".btn">#3215</a>
-            </td>
-            <td>
-                <b>
-                    chore: updates to standards doc
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                - added credential manifest specification reference
-
-Signed-off-by: sudesh.shetty <sudesh.shetty@securekey.com>
-
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-07 13:20:50 +0000 UTC
     </div>
 </div>
 

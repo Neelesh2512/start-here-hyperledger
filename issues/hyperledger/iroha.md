@@ -105,40 +105,6 @@ Also `PermissionRemoved` event is emitted in `Unregister<Role>` in `smartcontrac
     <table>
         <tr>
             <td>
-                Issue <a href="https://github.com/hyperledger/iroha/issues/2005" class=".btn">2005</a>
-            </td>
-            <td>
-                <b>
-                    Fix `listen_for_events()` in `Client`
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span class="chip">Enhancement</span><span class="chip">good first issue</span><span class="chip">iroha2</span>
-            </td>
-            <td>
-                When running some integration tests that use event subscription (for example `time_trigger_execution_count_error_should_be_less_than_10_percent`) an error message apears in log:
-
-```
-ERROR iroha::torii::routing: Failed to subscribe someone error=Event consuming error: WebSocket error: WebSocket protocol error: Connection reset without closing handshake
-```
-
-So `Client` uses API a bit wrong and doesn't close subscription connection properly. To make closing handshake a `WebSocket::close()` method should be called on `stream` field of `EventIterator`. 
-
-Ideally this fix should provide the same good-looking API as before. User shouldn't close connection manualy
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-03-24 22:34:21 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
                 Issue <a href="https://github.com/hyperledger/iroha/issues/2000" class=".btn">2000</a>
             </td>
             <td>
@@ -188,6 +154,39 @@ It should be noted that empty string is a well defined identifier
     </table>
     <div class="right-align">
         Created At 2022-03-22 14:39:32 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                Issue <a href="https://github.com/hyperledger/iroha/issues/1992" class=".btn">1992</a>
+            </td>
+            <td>
+                <b>
+                    Consolidate supporting tools in the `tools` folder of the project. 
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <span class="chip">good first issue</span><span class="chip">iroha2</span>
+            </td>
+            <td>
+                Iroha is shipped with multiple supporting binaries that can be classified as tools. 
+
+I propose moving 
+- iroha_docs
+- iroha_crypto_cli
+- iroha_schema_bin
+
+into the `tools` folder in the project. 
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-03-22 06:45:33 +0000 UTC
     </div>
 </div>
 

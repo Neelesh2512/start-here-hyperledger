@@ -14,6 +14,148 @@ permalink: /pull-requests/hyperledger/cactus
     <table>
         <tr>
             <td>
+                PR <a href="https://github.com/hyperledger/cactus/pull/1977" class=".btn">#1977</a>
+            </td>
+            <td>
+                <b>
+                    test(connector-fabric-socketio): add functional test, bug fix
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                Added functional jest test `fabric-socketio-connector.test` that can be run during CI process. It checks evaluate/sending transactions and monitoring for new events. Connector had to be refactored to be testable, tests also discovered some bugs that had to be fixed in order to pass.
+
+### SocketIOApiClient refactors:
+- Added option for supplying `validatorKeyValue` instead of `validatorKeyPath`.
+- JWT validation function works with key value now (instead of reading the key).
+- Validator can now return messages that are not encrypted (it throwed error previously).
+- Adjusted unit tests.
+
+### connector-fabric-socketio refactors:
+- Connector can be run both as a standalone app and loaded as a module `www.js`. Caller can use exported `startFabricSocketIOConnector` function to run the connector. Configuration must be supplied in file or in env variable like it's done in functional test.
+- All cryptographic data (keys, certificates, etc…) can now be supplied as a value (previously it supported only path to a file).
+- `sendSignedTransaction` can now be called synchronously (it had wrong response format before).
+- Fixed a bug introduced during my last changes in this component, which caused fabric-client session to be disconnected but still reused by follow-up requests. I didn't know that gateway disconnects client it operates on.
+- Increased JWT expiration to 15 minutes to prevent constant JWT expiration error (I'm pretty sure 15 minutes is still secure period).
+- Minor improvements (logging, formatting, etc…)
+
+### fabric-test-ledger-v1 changes:
+- Added `adminCredentials()` to have programatic access to admin credentials on currently used ledger
+ (unlikely, but can change in the future).
+
+Depends on: https://github.com/hyperledger/cactus/pull/1975
+
+Closes: https://github.com/hyperledger/cactus/issues/1976
+
+Signed-off-by: Michal Bajer <michal.bajer@fujitsu.com>
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-15 15:35:41 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/cactus/pull/1975" class=".btn">#1975</a>
+            </td>
+            <td>
+                <b>
+                    refactor(connector-fabric-socketio): fix strict flag warnings
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                cactus-plugin-ledger-connector-fabric-socketio will compile with global strict flag.
+
+Related issue: #1671
+
+Signed-off-by: Michal Bajer <michal.bajer@fujitsu.com>
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-15 15:26:23 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/cactus/pull/1973" class=".btn">#1973</a>
+            </td>
+            <td>
+                <b>
+                    Cross-Site Scripting attack (XSS).
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                Unsanitized input from an HTTP parameter flows into send, where it is used to render an HTML page returned to the user. This may result in a Cross-Site Scripting attack (XSS).
+
+Signed-off-by: Bhaskar <dev@bhaskar.email>
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-14 05:32:32 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/cactus/pull/1972" class=".btn">#1972</a>
+            </td>
+            <td>
+                <b>
+                    test: jestify api client routing node to node test
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                This test file required more refactoring because the `tap` tests were nested, however `jest` doesn't allow nested test cases
+
+
+File Path: 
+packages/cactus-test-api-client/src/test/typescript/integration/api-client-routing-node-to-node.test.ts
+
+This is a PARTIAL resolution to issue #238
+
+Signed-off-by: Youngone Lee <youngone.lee@accenture.com>
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-13 16:05:35 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
                 PR <a href="https://github.com/hyperledger/cactus/pull/1971" class=".btn">#1971</a>
             </td>
             <td>
@@ -198,122 +340,6 @@ Signed-off-by: ruzell22 <ruzell.vince.aquino@accenture.com>
     </table>
     <div class="right-align">
         Created At 2022-04-10 12:44:34 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/cactus/pull/1962" class=".btn">#1962</a>
-            </td>
-            <td>
-                <b>
-                    build(deps): bump moment from 2.29.1 to 2.29.2
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span class="chip">dependencies</span><span class="chip">javascript</span>
-            </td>
-            <td>
-                Bumps [moment](https://github.com/moment/moment) from 2.29.1 to 2.29.2.
-<details>
-<summary>Changelog</summary>
-<p><em>Sourced from <a href="https://github.com/moment/moment/blob/develop/CHANGELOG.md">moment's changelog</a>.</em></p>
-<blockquote>
-<h3>2.29.2 <a href="https://gist.github.com/ichernev/1904b564f6679d9aac1ae08ce13bc45c">See full changelog</a></h3>
-<ul>
-<li>Release Apr 3 2022</li>
-</ul>
-<p>Address <a href="https://github.com/advisories/GHSA-8hfj-j24r-96c4">https://github.com/advisories/GHSA-8hfj-j24r-96c4</a></p>
-</blockquote>
-</details>
-<details>
-<summary>Commits</summary>
-<ul>
-<li><a href="https://github.com/moment/moment/commit/75e2ac573e8cd62086a6bc6dc1b8d271e2804391"><code>75e2ac5</code></a> Build 2.29.2</li>
-<li><a href="https://github.com/moment/moment/commit/5a2987758edc7d413d1248737d9d0d1b65a70450"><code>5a29877</code></a> Bump version to 2.29.2</li>
-<li><a href="https://github.com/moment/moment/commit/4fd847b7a8c7065d88ba0a64b727660190dd45d7"><code>4fd847b</code></a> Update changelog for 2.29.2</li>
-<li><a href="https://github.com/moment/moment/commit/4211bfc8f15746be4019bba557e29a7ba83d54c5"><code>4211bfc</code></a> [bugfix] Avoid loading path-looking locales from fs</li>
-<li><a href="https://github.com/moment/moment/commit/f2a813afcfd0dd6e63812ea74c46ecc627f6a6a6"><code>f2a813a</code></a> [misc] Fix indentation (according to prettier)</li>
-<li><a href="https://github.com/moment/moment/commit/7a10de889de64c2519f894a84a98030bec5022d9"><code>7a10de8</code></a> [test] Avoid hours around DST</li>
-<li><a href="https://github.com/moment/moment/commit/e96809208c9d1b1bbe22d605e76985770024de42"><code>e968092</code></a> [locale] ar-ly: fix locale name (<a href="https://github-redirect.dependabot.com/moment/moment/issues/5828">#5828</a>)</li>
-<li><a href="https://github.com/moment/moment/commit/53d7ee6ad8c60c891571c7085db91831bbc095b4"><code>53d7ee6</code></a> [misc] fix builds (<a href="https://github-redirect.dependabot.com/moment/moment/issues/5836">#5836</a>)</li>
-<li><a href="https://github.com/moment/moment/commit/52019f1dda47c3e598aaeaa4ac89d5a574641604"><code>52019f1</code></a> [misc] Specify length of toArray return type (<a href="https://github-redirect.dependabot.com/moment/moment/issues/5766">#5766</a>)</li>
-<li><a href="https://github.com/moment/moment/commit/0dcaaa689d02dde824029b09ab6aa64ff351ee2e"><code>0dcaaa6</code></a> [locale] tr: update translation of Monday and Saturday (<a href="https://github-redirect.dependabot.com/moment/moment/issues/5756">#5756</a>)</li>
-<li>Additional commits viewable in <a href="https://github.com/moment/moment/compare/2.29.1...2.29.2">compare view</a></li>
-</ul>
-</details>
-<br />
-
-
-[![Dependabot compatibility score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=moment&package-manager=npm_and_yarn&previous-version=2.29.1&new-version=2.29.2)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)
-
-Dependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `@dependabot rebase`.
-
-[//]: # (dependabot-automerge-start)
-[//]: # (dependabot-automerge-end)
-
----
-
-<details>
-<summary>Dependabot commands and options</summary>
-<br />
-
-You can trigger Dependabot actions by commenting on this PR:
-- `@dependabot rebase` will rebase this PR
-- `@dependabot recreate` will recreate this PR, overwriting any edits that have been made to it
-- `@dependabot merge` will merge this PR after your CI passes on it
-- `@dependabot squash and merge` will squash and merge this PR after your CI passes on it
-- `@dependabot cancel merge` will cancel a previously requested merge and block automerging
-- `@dependabot reopen` will reopen this PR if it is closed
-- `@dependabot close` will close this PR and stop Dependabot recreating it. You can achieve the same result by closing it manually
-- `@dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)
-- `@dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)
-- `@dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)
-- `@dependabot use these labels` will set the current labels as the default for future PRs for this repo and language
-- `@dependabot use these reviewers` will set the current reviewers as the default for future PRs for this repo and language
-- `@dependabot use these assignees` will set the current assignees as the default for future PRs for this repo and language
-- `@dependabot use this milestone` will set the current milestone as the default for future PRs for this repo and language
-
-You can disable automated security fix PRs for this repo from the [Security Alerts page](https://github.com/hyperledger/cactus/network/alerts).
-
-</details>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-09 13:25:35 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/cactus/pull/1960" class=".btn">#1960</a>
-            </td>
-            <td>
-                <b>
-                    docs: add descriptions of ledgers in whitepaper
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span class="chip">documentation</span>
-            </td>
-            <td>
-                Split documentation that @petermetz asked for in the comments of PR #1810 
-
-Signed-off-by: Youngone Lee <youngone.lee@accenture.com>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-06 12:48:30 +0000 UTC
     </div>
 </div>
 

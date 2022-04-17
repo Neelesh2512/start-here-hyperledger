@@ -14,6 +14,223 @@ permalink: /pull-requests/hyperledger/besu
     <table>
         <tr>
             <td>
+                PR <a href="https://github.com/hyperledger/besu/pull/3734" class=".btn">#3734</a>
+            </td>
+            <td>
+                <b>
+                    Thread safe rocksdb segment handles
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                <!-- Thanks for sending a pull request! Please check out our contribution guidelines: -->
+<!-- https://github.com/hyperledger/besu/blob/main/CONTRIBUTING.md -->
+
+## PR description
+
+Ensure thread-safe access to rocksdb column family segments, in case we have dropped and recreated a columnFamily in `RocksDBColumnarKeyValueStorage.clear()`.
+
+
+## Fixed Issue(s)
+<!-- Please link to fixed issue(s) here using format: fixes #<issue number> -->
+<!-- Example: "fixes #2" -->
+#3722
+
+
+## Documentation
+
+- [x] I thought about documentation and added the `doc-change-required` label to this PR if
+    [updates are required](https://wiki.hyperledger.org/display/BESU/Documentation).
+
+## Changelog
+
+- [x] I thought about the changelog and included a [changelog update if required](https://wiki.hyperledger.org/display/BESU/Changelog).
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-15 20:27:08 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/besu/pull/3733" class=".btn">#3733</a>
+            </td>
+            <td>
+                <b>
+                     test block import optimization ideas
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                Signed-off-by: Karim TAAM <karim.t2am@gmail.com>
+
+<!-- Thanks for sending a pull request! Please check out our contribution guidelines: -->
+<!-- https://github.com/hyperledger/besu/blob/main/CONTRIBUTING.md -->
+
+## PR description
+
+## Fixed Issue(s)
+<!-- Please link to fixed issue(s) here using format: fixes #<issue number> -->
+<!-- Example: "fixes #2" -->
+
+## Documentation
+
+- [ ] I thought about documentation and added the `doc-change-required` label to this PR if
+    [updates are required](https://wiki.hyperledger.org/display/BESU/Documentation).
+
+## Changelog
+
+- [ ] I thought about the changelog and included a [changelog update if required](https://wiki.hyperledger.org/display/BESU/Changelog).
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-15 12:52:44 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/besu/pull/3729" class=".btn">#3729</a>
+            </td>
+            <td>
+                <b>
+                    fix ethstats issue
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                Signed-off-by: Karim TAAM <karim.t2am@gmail.com>
+
+<!-- Thanks for sending a pull request! Please check out our contribution guidelines: -->
+<!-- https://github.com/hyperledger/besu/blob/main/CONTRIBUTING.md -->
+
+## PR description
+
+- Fix a problem in the retry mechanism meant that we could send a large number of requests at the same time.
+- Setting the default port to 3000 if it is not put in the flag
+
+## Fixed Issue(s)
+<!-- Please link to fixed issue(s) here using format: fixes #<issue number> -->
+<!-- Example: "fixes #2" -->
+
+fixes #3570
+
+## Documentation
+
+- [ ] I thought about documentation and added the `doc-change-required` label to this PR if
+    [updates are required](https://wiki.hyperledger.org/display/BESU/Documentation).
+
+## Changelog
+
+- [ ] I thought about the changelog and included a [changelog update if required](https://wiki.hyperledger.org/display/BESU/Changelog).
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-14 13:50:36 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/besu/pull/3728" class=".btn">#3728</a>
+            </td>
+            <td>
+                <b>
+                    remove TTD depth limit for ancestorIsValidTerminalProofOfWork
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                Signed-off-by: garyschulte <garyschulte@gmail.com>
+
+<!-- Thanks for sending a pull request! Please check out our contribution guidelines: -->
+<!-- https://github.com/hyperledger/besu/blob/main/CONTRIBUTING.md -->
+
+## PR description
+
+remove TTD search depth limit.  Ideally we will set a recent finalized block when we finish backward sync (and fast and snap sync as well), as that will be more performant than scanning through blocks looking for TTD when we do not have a finalized block.  However, removing this limit will prevent us from incorrectly failing an `engine_forkchoiceUpdate` call post-sync when there is a significant distance between HEAD and TTD.
+
+
+## Fixed Issue(s)
+<!-- Please link to fixed issue(s) here using format: fixes #<issue number> -->
+<!-- Example: "fixes #2" -->
+#3727
+
+## Documentation
+
+- [ ] I thought about documentation and added the `doc-change-required` label to this PR if
+    [updates are required](https://wiki.hyperledger.org/display/BESU/Documentation).
+
+## Changelog
+
+- [ ] I thought about the changelog and included a [changelog update if required](https://wiki.hyperledger.org/display/BESU/Changelog).
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-13 20:45:16 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/besu/pull/3726" class=".btn">#3726</a>
+            </td>
+            <td>
+                <b>
+                    3621 parent timestamps
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                - Adds lastValidHash as optional param to failing ForkChoiceResults
+- Controversial:  fails on timestamps that are not greater than parents. This was requested when discovered in a differential fuzz test against Geth, however the means of handling this and returning the error to the CL is still under discussion
+
+fixes #3677 
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-13 17:54:35 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
                 PR <a href="https://github.com/hyperledger/besu/pull/3723" class=".btn">#3723</a>
             </td>
             <td>
@@ -134,349 +351,6 @@ Signed-off-by: Ameziane H <ameziane.hamlat@consensys.net>
     </table>
     <div class="right-align">
         Created At 2022-04-11 12:47:47 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/besu/pull/3712" class=".btn">#3712</a>
-            </td>
-            <td>
-                <b>
-                    Fix save worldstate issue on bonsai and fastsync
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Signed-off-by: Karim TAAM <karim.t2am@gmail.com>
-
-<!-- Thanks for sending a pull request! Please check out our contribution guidelines: -->
-<!-- https://github.com/hyperledger/besu/blob/main/CONTRIBUTING.md -->
-
-## PR description
-
-Fix a bug that caused the worldstate to be missing during a fastsync and prevented it from completing properly
-
-## Fixed Issue(s)
-<!-- Please link to fixed issue(s) here using format: fixes #<issue number> -->
-<!-- Example: "fixes #2" -->
-
-## Documentation
-
-- [x] I thought about documentation and added the `doc-change-required` label to this PR if
-    [updates are required](https://wiki.hyperledger.org/display/BESU/Documentation).
-
-## Changelog
-
-- [x] I thought about the changelog and included a [changelog update if required](https://wiki.hyperledger.org/display/BESU/Changelog).
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-08 11:06:37 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/besu/pull/3711" class=".btn">#3711</a>
-            </td>
-            <td>
-                <b>
-                    Fix NPE in DeFramer
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span class="chip">bug</span>
-            </td>
-            <td>
-                Signed-off-by: Frank Li <b439988l@gmail.com>
-
-<!-- Thanks for sending a pull request! Please check out our contribution guidelines: -->
-<!-- https://github.com/hyperledger/besu/blob/main/CONTRIBUTING.md -->
-
-## PR description
-Catch an NPE using optionals and complete the future nicely with an exception
-
-## Fixed Issue(s)
-Fixes #3637 
-
-## Documentation
-
-- [X] I thought about documentation and added the `doc-change-required` label to this PR if
-    [updates are required](https://wiki.hyperledger.org/display/BESU/Documentation).
-
-## Changelog
-
-- [X] I thought about the changelog and included a [changelog update if required](https://wiki.hyperledger.org/display/BESU/Changelog).
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-08 04:45:48 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/besu/pull/3710" class=".btn">#3710</a>
-            </td>
-            <td>
-                <b>
-                    add snapsync as beta feature
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Signed-off-by: Karim TAAM <karim.t2am@gmail.com>
-
-<!-- Thanks for sending a pull request! Please check out our contribution guidelines: -->
-<!-- https://github.com/hyperledger/besu/blob/main/CONTRIBUTING.md -->
-
-## PR description
-
-This PR enables the snapsync as client. It works with Bonsai but there are still some limitations and possible optimizations.
-I will test with Forest
-
-## Fixed Issue(s)
-<!-- Please link to fixed issue(s) here using format: fixes #<issue number> -->
-<!-- Example: "fixes #2" -->
-
-## Documentation
-
-- [x] I thought about documentation and added the `doc-change-required` label to this PR if
-    [updates are required](https://wiki.hyperledger.org/display/BESU/Documentation).
-
-## Changelog
-
-- [x] I thought about the changelog and included a [changelog update if required](https://wiki.hyperledger.org/display/BESU/Changelog).
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-07 09:28:46 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/besu/pull/3709" class=".btn">#3709</a>
-            </td>
-            <td>
-                <b>
-                    lgtm yml
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Signed-off-by: Sally MacFarlane <sally.macfarlane@consensys.net>
-
-Added config file for LGTM
-Note the LGTM failure is the "main build" which is building off main branch - which still has OOM. But the "merge build" ie building off this PR, is passing. 
-
-Current report: https://lgtm.com/projects/g/hyperledger/besu/logs/rev/pr-935719d01d715dea5db84d624ce75b5505b7708f/lang:java/stage:Build%20main_fe673431fab8c6439e6eb0e83f6545a1583afaeb
-
-## Documentation
-
-- [x] I thought about documentation and added the `doc-change-required` label to this PR if
-    [updates are required](https://wiki.hyperledger.org/display/BESU/Documentation).
-
-## Changelog
-
-- [x] I thought about the changelog and included a [changelog update if required](https://wiki.hyperledger.org/display/BESU/Changelog).
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-07 08:44:57 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/besu/pull/3708" class=".btn">#3708</a>
-            </td>
-            <td>
-                <b>
-                    Not null annotations
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                replace jetbrains with javax.annotation.Nonnull
-
-## Documentation
-
-- [x] I thought about documentation and added the `doc-change-required` label to this PR if
-    [updates are required](https://wiki.hyperledger.org/display/BESU/Documentation).
-
-## Changelog
-
-- [x] I thought about the changelog and included a [changelog update if required](https://wiki.hyperledger.org/display/BESU/Changelog).
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-07 07:01:42 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/besu/pull/3707" class=".btn">#3707</a>
-            </td>
-            <td>
-                <b>
-                    Feature/bonsai fast sync clear flat db
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                <!-- Thanks for sending a pull request! Please check out our contribution guidelines: -->
-<!-- https://github.com/hyperledger/besu/blob/main/CONTRIBUTING.md -->
-
-## PR description
-During fast sync on bonsai, clear only the flat database rather than the entire bonsai worldstate.  
-
-DRAFT: while testing bonsai fast-sync account db clearing and lazy reads on goerli and mainnet
-
-
-## Fixed Issue(s)
-<!-- Please link to fixed issue(s) here using format: fixes #<issue number> -->
-<!-- Example: "fixes #2" -->
-Along with #3684 , fixes #3694 
-
-## Documentation
-
-
-- [ ] I thought about documentation and added the `doc-change-required` label to this PR if
-    [updates are required](https://wiki.hyperledger.org/display/BESU/Documentation).
-
-## Changelog
-
-- [ ] I thought about the changelog and included a [changelog update if required](https://wiki.hyperledger.org/display/BESU/Changelog).
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-07 05:19:15 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/besu/pull/3705" class=".btn">#3705</a>
-            </td>
-            <td>
-                <b>
-                    vertx 4.2.6
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Signed-off-by: Sally MacFarlane <sally.macfarlane@consensys.net>
-
-Update vertx dependency
-
-## Documentation
-
-- [x] I thought about documentation and added the `doc-change-required` label to this PR if
-    [updates are required](https://wiki.hyperledger.org/display/BESU/Documentation).
-
-## Changelog
-
-- [ ] I thought about the changelog and included a [changelog update if required](https://wiki.hyperledger.org/display/BESU/Changelog).
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-07 01:59:22 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/besu/pull/3703" class=".btn">#3703</a>
-            </td>
-            <td>
-                <b>
-                    Add flag for snapsync
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <span class="chip">snapsync</span>
-            </td>
-            <td>
-                Signed-off-by: Karim TAAM <karim.t2am@gmail.com>
-
-<!-- Thanks for sending a pull request! Please check out our contribution guidelines: -->
-<!-- https://github.com/hyperledger/besu/blob/main/CONTRIBUTING.md -->
-
-## PR description
-
-We start adding the flags for the snapsync. Most are experimental flags because normally the user doesn't have to change the values. But it can be used to change the values if needed or to tune performance.
-
-## Fixed Issue(s)
-<!-- Please link to fixed issue(s) here using format: fixes #<issue number> -->
-<!-- Example: "fixes #2" -->
-
-## Documentation
-
-- [ ] I thought about documentation and added the `doc-change-required` label to this PR if
-    [updates are required](https://wiki.hyperledger.org/display/BESU/Documentation).
-
-## Changelog
-
-- [ ] I thought about the changelog and included a [changelog update if required](https://wiki.hyperledger.org/display/BESU/Changelog).
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-06 14:32:41 +0000 UTC
     </div>
 </div>
 

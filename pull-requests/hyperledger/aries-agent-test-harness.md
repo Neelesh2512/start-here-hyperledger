@@ -14,6 +14,60 @@ permalink: /pull-requests/hyperledger/aries-agent-test-harness
     <table>
         <tr>
             <td>
+                PR <a href="https://github.com/hyperledger/aries-agent-test-harness/pull/478" class=".btn">#478</a>
+            </td>
+            <td>
+                <b>
+                    Changes by create-pull-request action
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                Automated changes by [create-pull-request](https://github.com/peter-evans/create-pull-request) GitHub action
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-14 22:14:25 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
+                PR <a href="https://github.com/hyperledger/aries-agent-test-harness/pull/477" class=".btn">#477</a>
+            </td>
+            <td>
+                <b>
+                    Set timeout on waiting for test harnesses to complete.
+                </b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                
+            </td>
+            <td>
+                - Some test harnesses can take up to 45 minutes to complete.
+
+Signed-off-by: Wade Barnes <wade@neoterictech.ca>
+            </td>
+        </tr>
+    </table>
+    <div class="right-align">
+        Created At 2022-04-14 14:44:16 +0000 UTC
+    </div>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td>
                 PR <a href="https://github.com/hyperledger/aries-agent-test-harness/pull/476" class=".btn">#476</a>
             </td>
             <td>
@@ -121,114 +175,6 @@ ACA-Py now checks if a schema/cred def already exists before creating it. This P
     </table>
     <div class="right-align">
         Created At 2022-04-10 16:50:12 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/aries-agent-test-harness/pull/472" class=".btn">#472</a>
-            </td>
-            <td>
-                <b>
-                    Workaround the dotnet-master build not working by using dotnet test agent everywhere -- revert later possible
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Signed-off-by: Stephen Curran <swcurran@gmail.com>
-
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-08 21:05:45 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/aries-agent-test-harness/pull/470" class=".btn">#470</a>
-            </td>
-            <td>
-                <b>
-                    Fix bad link as highlighted in #443
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Signed-off-by: Stephen Curran <swcurran@gmail.com>
-
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-08 20:44:22 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/aries-agent-test-harness/pull/468" class=".btn">#468</a>
-            </td>
-            <td>
-                <b>
-                    fix(afj): use npm alpha version again
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Update AFJ to again use the latest alpha version from npm
-
-Signed-off-by: Timo Glastra <timo@animo.id>
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-06 15:13:47 +0000 UTC
-    </div>
-</div>
-
-<div>
-    <table>
-        <tr>
-            <td>
-                PR <a href="https://github.com/hyperledger/aries-agent-test-harness/pull/467" class=".btn">#467</a>
-            </td>
-            <td>
-                <b>
-                    feat: support revocation notification v1
-                </b>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                
-            </td>
-            <td>
-                Adds support for revocation notification v1 in the revocation tests. For ACA-Py it currently uses an incorrect value for the `thread_id` in the revocation notification, so this is also being used in the AATH tests. I don't think there's an implementation that implemented the actual RFC. It also supports the correct thread_id when checking if a revocation notification has been received, so if other agents do support the RFC variant it will also work (but not with ACA-Py as ACA-Py doesn't follow the RFC).
-            </td>
-        </tr>
-    </table>
-    <div class="right-align">
-        Created At 2022-04-06 13:20:43 +0000 UTC
     </div>
 </div>
 
