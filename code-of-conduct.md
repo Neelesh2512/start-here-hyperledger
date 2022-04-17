@@ -1,4 +1,4 @@
-<!-- ---
+---
 layout: default
 title: Code of Conduct
 nav_order: 8
@@ -129,5 +129,4 @@ To report incidents or to appeal reports of incidents, send email to Mike Dolan 
 
 # Credits
 
-This code is based on the [W3C's Code of Ethics and Professional Conduct](https://www.w3.org/Consortium/cepc) with some additions from the [Cloud Foundry](https://www.cloudfoundry.org/)'s Code of Conduct. -->
-Hello world
+This code is based on the [W3C's Code of Ethics and Professional Conduct](https://www.w3.org/Consortium/cepc) with some additions from the [Cloud Foundry](https://www.cloudfoundry.org/)'s Code of Conduct.
